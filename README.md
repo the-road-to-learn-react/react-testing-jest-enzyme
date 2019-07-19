@@ -10,6 +10,7 @@ A solid test setup for React components with Jest and Enzyme in a [React + Webpa
 - Webpack
 - Testing
   - Jest + Enzyme: Unit/Integration + Snapshot Test
+  - Optional E2E Tests: Cypress
   - Optional CI: Travis CI
   - Optional Reporting: Coveralls.io
 
