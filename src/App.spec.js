@@ -42,23 +42,6 @@ describe('Reducer Test', () => {
 });
 
 describe('App', () => {
-  const promise = Promise.resolve({
-    data: {
-      hits: [
-        { objectID: '1', title: 'a' },
-        { objectID: '2', title: 'b' },
-      ],
-    },
-  });
-
-  beforeEach(() => {
-    axios.get = jest.fn(() => promise);
-  });
-
-  afterEach(() => {
-    axios.get.mockClear();
-  });
-
   test('snapshot renders', () => {
     const component = renderer.create(<App />);
     let tree = component.toJSON();
@@ -101,22 +84,57 @@ describe('App', () => {
     expect(counterWrapper.find('p').text()).toBe('-1');
   });
 
-  it('fetches async data', () => {
+  it('fetches async data', done => {
+    const promise = new Promise((resolve, reject) =>
+      setTimeout(
+        () =>
+          resolve({
+            data: {
+              hits: [
+                { objectID: '1', title: 'a' },
+                { objectID: '2', title: 'b' },
+              ],
+            },
+          }),
+        100
+      )
+    );
+
+    axios.get = jest.fn(() => promise);
+
     const wrapper = mount(<App />);
 
     expect(wrapper.find('li').length).toEqual(0);
 
     promise.then(() => {
+      wrapper.update();
       expect(wrapper.find('li').length).toEqual(2);
+
+      axios.get.mockClear();
+
+      done();
     });
   });
 
-  it('fetches async data but fails', () => {
+  it('fetches async data but fails', done => {
+    const promise = new Promise((resolve, reject) =>
+      setTimeout(() => reject(new Error('Whoops!')), 100)
+    );
+
+    axios.get = jest.fn(() => promise);
+
     const wrapper = mount(<App />);
 
-    promise.then(() => {
-      expect(wrapper.find('li').length).toEqual(0);
-      expect(wrapper.find('.error').length).toEqual(1);
+    promise.catch(() => {
+      setImmediate(() => {
+        wrapper.update();
+
+        expect(wrapper.find('li').length).toEqual(0);
+        expect(wrapper.find('.error').length).toEqual(1);
+
+        axios.get.mockClear();
+        done();
+      });
     });
   });
 });
