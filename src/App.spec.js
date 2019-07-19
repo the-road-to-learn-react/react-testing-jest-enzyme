@@ -1,10 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import renderer from 'react-test-renderer';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
+import { mount } from 'enzyme';
 
 import App, { dataReducer, Counter } from './App';
 

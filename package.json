@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "test": "jest --config ./test/jest.config.json",
+    "test": "jest --config ./jest.config.json",
     "test:watch": "npm run test -- --watch",
     "test:cypress": "start-server-and-test start http://localhost:8080 cypress",
     "cypress": "cypress run",
