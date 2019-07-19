@@ -20,3 +20,4 @@ A solid test setup for React components with Jest and Enzyme in a [React + Webpa
 - npm install
 - npm start
 - visit `http://localhost:8080/`
+- npm test
