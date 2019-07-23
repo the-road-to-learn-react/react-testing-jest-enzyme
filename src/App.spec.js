@@ -104,12 +104,14 @@ describe('App', () => {
     expect(wrapper.find('li').length).toEqual(0);
 
     promise.then(() => {
-      wrapper.update();
-      expect(wrapper.find('li').length).toEqual(2);
+      setImmediate(() => {
+        wrapper.update();
+        expect(wrapper.find('li').length).toEqual(2);
 
-      axios.get.mockClear();
+        axios.get.mockClear();
 
-      done();
+        done();
+      });
     });
   });
 
