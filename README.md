@@ -4,8 +4,11 @@
 
 A solid test setup for React components with Jest and Enzyme in a [React + Webpack](https://github.com/the-road-to-learn-react/minimal-react-webpack-babel-setup) application. Read more about it: 
 
-* [0](https://www.robinwieruch.de/react-testing-jest/) 
-* [1](https://www.robinwieruch.de/react-testing-jest-enzyme/)
+* [Jest Tutorial](https://www.robinwieruch.de/react-testing-jest/) 
+* [Jest + Enzyme Tutorial](https://www.robinwieruch.de/react-testing-jest-enzyme/)
+* [Cypress Tutorial](https://www.robinwieruch.de/react-testing-cypress/)
+* [CI Tutorial](https://www.robinwieruch.de/javascript-continuous-integration/)
+* [Test Coverage Tutorial](https://www.robinwieruch.de/javascript-test-coverage/)
 
 ## Features
 
