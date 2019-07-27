@@ -6,6 +6,9 @@ A test setup for React components with Jest and Enzyme in a [React + Webpack](ht
 
 * [Jest Tutorial](https://www.robinwieruch.de/react-testing-jest/) 
 * [Jest + Enzyme Tutorial](https://www.robinwieruch.de/react-testing-jest-enzyme/)
+
+**Optional:**
+
 * [Cypress Tutorial](https://www.robinwieruch.de/react-testing-cypress/)
 * [CI Tutorial](https://www.robinwieruch.de/javascript-continuous-integration/)
 * [Test Coverage Tutorial](https://www.robinwieruch.de/javascript-test-coverage/)
