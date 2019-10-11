@@ -28,7 +28,7 @@
     "react-hot-loader": "^4.12.10",
     "react-test-renderer": "^16.8.6",
     "start-server-and-test": "^1.9.1",
-    "webpack": "^4.38.0",
+    "webpack": "^4.41.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
   },
