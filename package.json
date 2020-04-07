@@ -18,7 +18,7 @@
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.5",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.0.6",
     "coveralls": "^3.0.5",
     "cypress": "^3.4.0",
